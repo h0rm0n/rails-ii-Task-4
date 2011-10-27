@@ -1,0 +1,14 @@
+= search_form_for @q do |f|
+   = f.label :name_or_description_cont, "Search: "
+   = f.text_field :name_or_description_cont
+   = f.submit
+
+
+%table
+   %tr
+      %td Name
+      %td Description
+   -@products.each do |p|
+      %tr
+         %td= p.name
+         %td= p.description
